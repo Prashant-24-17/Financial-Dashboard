@@ -245,31 +245,6 @@ Supported query parameters for `GET /api/records`:
 
 - `GET /api/dashboard/summary`
 
-## Example Record Payload
-
-```json
-{
-  "amount": 2500,
-  "type": "income",
-  "category": "Freelance",
-  "date": "2026-04-06T00:00:00.000Z",
-  "notes": "Website project payment"
-}
-```
-
-## Example Error Response
-
-```json
-{
-  "message": "Validation failed.",
-  "errors": [
-    {
-      "field": "amount",
-      "message": "Amount must be greater than 0."
-    }
-  ]
-}
-```
 
 ## Design Decisions
 
@@ -310,23 +285,3 @@ Summary values such as total income, expenses, net balance, and monthly trends a
 - Add audit logs for admin actions
 - Add Docker setup for easier deployment
 
-## Interview Talking Points
-
-If you are presenting this project in an interview, you can describe it like this:
-
-> I built a role-based finance dashboard system using React, Express, and MongoDB. The frontend consumes a protected API, while the backend handles validation, role authorization, CRUD operations, and dashboard aggregation logic. Admins can fully manage users and records, while analysts and viewers have restricted read-only access. MongoDB stores both users and financial records, and summary APIs provide dashboard insights such as totals, trends, and category-level breakdowns.
-
-## Screens To Demonstrate
-
-During a demo, you can show:
-
-- Switching between admin, analyst, and viewer
-- Creating a new financial record as admin
-- Filtering records by category or date
-- Showing that analyst/viewer cannot edit or delete records
-- Creating or updating a user as admin
-- Verifying saved data in MongoDB Compass or `mongosh`
-
-## License
-
-This project is for learning, portfolio, and interview demonstration purposes.
